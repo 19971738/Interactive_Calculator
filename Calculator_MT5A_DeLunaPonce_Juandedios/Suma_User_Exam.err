@@ -1,0 +1,4 @@
+>>> Warning 202 "Suma_User_Exam.c" Line 12(6,10): Variable never used:   num2
+>>> Warning 202 "Suma_User_Exam.c" Line 16(7,8): Variable never used:   b
+      Memory usage:   ROM=46%      RAM=20% - 40%
+      0 Errors,  2 Warnings.

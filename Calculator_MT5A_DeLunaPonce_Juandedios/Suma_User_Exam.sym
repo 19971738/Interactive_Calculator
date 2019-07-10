@@ -1,0 +1,242 @@
+004-005 @READ_PROGRAM_MEMORY8.P1
+004     @WRITE_PROGRAM_MEMORY8.P2
+006     kbd
+008     lcd
+008     PSP_DATA
+008     lcdlat
+015     CCP_1
+015     CCP_1_LOW
+016     CCP_1_HIGH
+01B     CCP_2
+01B     CCP_2_LOW
+01C     CCP_2_HIGH
+020-021 strtok.save
+022-025 _Randseed
+026     kbd_getc.kbd_call_count
+027.0   kbd_getc.kbd_down
+028     kbd_getc.last_key
+029     kbd_getc.col
+02A     MAIN.k
+02B-03E MAIN.num2
+03F-052 MAIN.num
+053-05C MAIN.rep
+05D-05E MAIN.ptr
+05F     MAIN.ptr2
+060     MAIN.c
+061     MAIN.z
+062     MAIN.value3
+063-066 MAIN.b
+067-068 MAIN.value
+069-06C MAIN.value2
+06D-070 MAIN.d
+071     kbd_getc.kchar
+071-072 strtof.s
+071-072 strtoul.s
+071     lcd_init.i
+071-074 @PRINTF_L32D_93FPFPF.P1
+071     MAIN.@SCRATCH1
+071     @PSTRINGC7_93.@SCRATCH1
+072     kbd_getc.row
+072     lcd_init.@SCRATCH1
+072     MAIN.@SCRATCH2
+072     @PSTRINGC7_93.@SCRATCH2
+073     @MUL88.P1
+073-074 strtoul.endptr
+073-074 strtof.endptr
+073     kbd_getc.@SCRATCH1
+073     @PSTRINGC7_93.@SCRATCH3
+074     @MUL88.P1
+075.0   strtof.skip
+075     @PRINTF_L32D_93FPFPF.P1
+075     strtoul.base
+075.1   strtof.sign
+075.2   strtof.point
+076     strtof.c
+076     strtoul.sign
+077     @SCRATCH
+078     @SCRATCH
+078     _RETURN_
+079     @SCRATCH
+07A     @SCRATCH
+07B-07C strtoul.sc
+07B-07E strtof.pow10
+07D-07E strtoul.s1
+088     lcdtris
+09C.6   C1OUT
+09C.7   C2OUT
+0A0-0A1 strtoul.sd
+0A0-0A3 strtof.result
+0A0     @PRINTF_L32D_93FPFPF.@SCRATCH1
+0A1     @PRINTF_L32D_93FPFPF.@SCRATCH2
+0A2-0A3 strtoul.x
+0A2     @PRINTF_L32D_93FPFPF.@SCRATCH3
+0A3     @PRINTF_L32D_93FPFPF.@SCRATCH4
+0A4-0C7 strtoul.digits
+0A4     strtof.ptr
+0A4     @PRINTF_L32D_93FPFPF.@SCRATCH5
+0A5     strtof.@SCRATCH1
+0A5     @PRINTF_L32D_93FPFPF.@SCRATCH6
+0A6     strtof.@SCRATCH2
+0A6     @PRINTF_L32D_93FPFPF.@SCRATCH7
+0A7     strtof.@SCRATCH3
+0A7     @PRINTF_L32D_93FPFPF.@SCRATCH8
+0A8-0AB @DIV3232.P1
+0A8     lcd_putc.c
+0A8-0AB @FTOSD.P1
+0A8-0AB @MULFF.P2
+0A8     strtof.@SCRATCH4
+0A9     lcd_gotoxy.x
+0A9     @delay_ms1.P1
+0AA     lcd_gotoxy.y
+0AB-0AE @ADDFF.P1
+0AB     lcd_gotoxy.address
+0AB-0AE @DIVFF.P1
+0AB-0AC @ITOF.P2
+0AC-0AF @DIV3232.P1
+0AC-0AF @MULFF.P2
+0AC     lcd_gotoxy.@SCRATCH1
+0AC     @FTOSD.@SCRATCH1
+0AD     lcd_send_byte.address
+0AE     lcd_send_byte.n
+0AF-0B2 @ADDFF.P1
+0AF-0B2 @DIVFF.P2
+0AF     lcd_read_byte.low
+0AF     lcd_send_byte.@SCRATCH1
+0B0     lcd_read_byte.high
+0B0     lcd_send_nibble.n
+0B0     @MULFF.@SCRATCH1
+0B0     @DIV3232.@SCRATCH1
+0B1     lcd_read_byte.@SCRATCH1
+0B1     @MULFF.@SCRATCH2
+0B1     @DIV3232.@SCRATCH2
+0B2     @MULFF.@SCRATCH3
+0B2     @DIV3232.@SCRATCH3
+0B3     @MULFF.@SCRATCH4
+0B3     @ADDFF.@SCRATCH1
+0B3     @DIVFF.@SCRATCH1
+0B3     @DIV3232.@SCRATCH4
+0B4     @MULFF.@SCRATCH5
+0B4     @ADDFF.@SCRATCH2
+0B4     @DIVFF.@SCRATCH2
+0B4     @DIV3232.@SCRATCH5
+0B5     @ADDFF.@SCRATCH3
+0B5     @DIVFF.@SCRATCH3
+0B6     @ADDFF.@SCRATCH4
+0B6     @DIVFF.@SCRATCH4
+0B7     @ADDFF.@SCRATCH5
+0B7     @DIVFF.@SCRATCH5
+0B8     @ADDFF.@SCRATCH6
+0B8     @DIVFF.@SCRATCH6
+0B9     @ADDFF.@SCRATCH7
+0BA     @ADDFF.@SCRATCH8
+0C8     strtoul.@SCRATCH1
+0C9     strtoul.@SCRATCH2
+0CA-0CB memchr.s
+0CB-0CC @MULS1616.P1
+0CC     memchr.c
+0CD-0CE @MULS1616.P1
+0CD     memchr.n
+0CE     memchr.uc
+0CF-0D0 memchr.su
+0CF     @MULS1616.@SCRATCH1
+0D0     @MULS1616.@SCRATCH2
+0D1     memchr.@SCRATCH1
+10D-10E @READ_PROGRAM_MEMORY8.P1
+10D-10E @WRITE_PROGRAM_MEMORY8.P2
+
+ROM Allocation:
+008C  @delay_ms1
+0004  LCD_INIT_STRING
+00BA  lcd_read_byte
+00B3  lcd_read_nibble
+00A1  lcd_send_nibble
+00B9  lcd_send_byte
+0105  lcd_init
+0142  lcd_gotoxy
+0156  lcd_putc
+024E  memchr
+0216  @MUL88
+03E7  @MULS1616
+0483  @MULFF
+04FA  @ITOF
+05E5  @ADDFF
+0519  @DIVFF
+0800  strtof
+0273  strtoul
+000C  KEYS
+013F  kbd_init
+01C5  kbd_getc
+0A4C  MAIN
+001C  @const393
+0187  @PSTRINGC7_93
+0022  @const395
+002B  @const396
+0030  @const397
+0031  @const398
+0035  @const401
+0037  @const404
+0038  @const405
+096F  @FTOSD
+072B  @DIV3232
+0943  @PRINTF_L32D_93FPFPF
+003F  @const415
+0043  @const418
+0045  @const421
+0046  @const422
+004D  @const424
+0053  @const427
+0055  @const430
+0056  @const431
+005D  @const433
+0063  @const436
+0065  @const439
+0066  @const440
+006F  @const442
+0079  @const443
+007F  @const444
+0080  @const445
+0088  @const446
+008B  @const447
+0A4C  @cinit
+045B  StrtoulGO
+0136  StrtolGO
+
+
+User Memory space: 
+
+User Memory space: 
+
+Project Directory:
+    C:\Users\student\Desktop\Practicas_Juandedios\
+
+Project Files:
+    Suma_User_Exam.c
+    ..\..\..\..\Program Files (x86)\PICC\Devices\16f877a.h
+    ..\..\..\..\Program Files (x86)\PICC\Drivers\lcd.c
+    ..\..\..\..\Program Files (x86)\PICC\Drivers\string.h
+    ..\..\..\..\Program Files (x86)\PICC\Drivers\stddef.h
+    ..\..\..\..\Program Files (x86)\PICC\Drivers\ctype.h
+    ..\..\..\..\Program Files (x86)\PICC\Drivers\stdlib.h
+    ..\..\..\..\Program Files (x86)\PICC\Drivers\kbd.c
+
+Units:
+    C:\Users\student\Desktop\Practicas_Juandedios\Suma_User_Exam (main)
+
+Compiler Settings:
+    Processor:      PIC16F877A
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    Errors:      Suma_User_Exam.err
+    Ext Symbols: Suma_User_Exam.esym
+    INHX8:       Suma_User_Exam.hex
+    Symbols:     Suma_User_Exam.sym
+    List:        Suma_User_Exam.lst
+    Debug/COFF:  Suma_User_Exam.cof
+    Project:     Suma_User_Exam.PJT
+    Call Tree:   Suma_User_Exam.tre
+    Statistics:  Suma_User_Exam.sta

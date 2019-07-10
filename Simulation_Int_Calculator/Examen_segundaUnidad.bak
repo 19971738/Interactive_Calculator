@@ -1,0 +1,132 @@
+#include <16f877a.h>
+#device ADC=10  // converter enable with a resolution of 10 bits
+#use delay(clock=20M)
+#include <lcd.c>
+#include <string.h>
+#use standard_io(d)
+
+signed  b=0,a=0;
+double  memoria2=0;
+void name();
+
+
+void main()
+{
+
+   int16 valor,memoria;
+   double voltage;
+   double memoria2=0;
+   lcd_init();
+    name();
+   setup_adc_ports(AN0);
+   setup_adc(ADC_CLOCK_INTERNAL);
+   while(1){
+   set_adc_channel(0);    //para tomar lectura... setup the channel 0 to receive voltage
+   delay_ms(20);            //memory time while the setup is done.
+   valor=read_adc();    //Va e el canal ya establecido
+   voltage = (5.0/1023.0)*valor;
+   memoria2 = voltage;
+  
+   if(memoria != valor){  
+    memoria2 = 0;
+   lcd_putc("\f");
+   memoria=read_adc();    //Va e el canal ya establecido
+   lcd_gotoxy(1,1);
+   printf(lcd_putc,"ADC=%Lu", valor);
+    voltage = 0;
+   voltage = (5.0/1023.0)*valor;
+  // memoria2 = voltage;
+   if(memoria2 >=3.50)
+      {
+      output_HIGH(PIN_C1);
+      output_LOW(PIN_C2);
+      output_LOW(PIN_C3);
+      memoria2 = 0;
+      lcd_gotoxy(1,2);
+       printf(lcd_putc,"HIGH VOLTAGE");
+      }
+   else if(memoria2 <=3.49 && memoria2 >1.5)
+      {
+      output_HIGH(PIN_C2);
+      output_LOW(PIN_C1);
+      output_LOW(PIN_C3);
+      memoria2 = 0;
+       lcd_gotoxy(1,2);
+       printf(lcd_putc,"NORMAL VOLTAGE");
+      }
+    else if(memoria2 <= 1.49)
+      {
+      output_HIGH(PIN_C3);
+      output_LOW(PIN_C1);
+      output_LOW(PIN_C2);
+       lcd_gotoxy(1,2);
+       printf(lcd_putc,"LOW VOLTAGE");
+      }
+   else 
+      {
+      memoria2=0;
+        
+      
+      }
+   lcd_gotoxy(9,1);
+   printf(lcd_putc,"Vo=%5.2f",voltage);
+  
+   }
+   else{
+   memoria2 = 0;
+   //lcd_putc("\f");
+   //valor=read_adc();    //Va e el canal ya establecido
+   lcd_gotoxy(1,1);
+   printf(lcd_putc,"ADC=%Lu", memoria);
+   voltage = (5.0/1023.0)*valor;
+   memoria2=voltage;
+    if(memoria2 >=3.51)
+      {
+      output_HIGH(PIN_C1);
+       output_LOW(PIN_C2);
+       output_LOW(PIN_C3);
+       lcd_gotoxy(1,2);
+       printf(lcd_putc,"HIGH VOLTAGE");
+      }
+    else if(memoria2 <= 3.49 && memoria2 >=1.50)
+      {
+      output_HIGH(PIN_C2);
+      output_LOW(PIN_C1);
+      output_LOW(PIN_C3);
+       lcd_gotoxy(1,2);
+       printf(lcd_putc,"NORMAL VOLTAGE");
+      }
+      else if(memoria2 <= 1.49)
+      {
+      output_HIGH(PIN_C3);
+      output_LOW(PIN_C2);
+      output_LOW(PIN_C1);
+      lcd_gotoxy(1,2);
+      printf(lcd_putc,"LOW VOLTAGE");
+      }
+      
+      else 
+      {
+      memoria2=0;
+      
+      }
+       lcd_gotoxy(9,1);
+   printf(lcd_putc,"Vo=%5.2f",voltage);
+   }
+
+   }
+
+}
+
+void name(){
+
+for(a=0;a<2;a++){
+
+for(b=-11; b<17;b++){
+lcd_putc("\f");
+lcd_gotoxy(b,1);
+printf(lcd_putc,"Juan de dios");
+ delay_ms(100);
+}
+}
+}
